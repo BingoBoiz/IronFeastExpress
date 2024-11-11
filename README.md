@@ -24,7 +24,7 @@ Each day brings new culinary challenges: managing your kitchen layout, cooking u
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/your-username/IronFeastExpress.git
+    git clone https://github.com/BingoBoiz/IronFeastExpress.git
     cd IronFeastExpress
     ```
 2. **Unity Setup**:
