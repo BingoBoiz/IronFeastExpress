@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4814aaf8bef254fad3d95f172990aa, type: 3}
+  m_Name: Ironwood Forest
+  m_EditorClassIdentifier: 
+  landName: Ironwood Forest
+  landDescription: "Nestled deep within an ancient, enchanted forest, the people
+    of Ironwood live in harmony with nature, relying on hunting and foraging for
+    their sustenance. Venison from the deer that roam the forest is a staple in many
+    dishes here, paired with wild herbs and vegetables like mushrooms and broccoli.
+    Outsiders visiting Ironwood often marvel at the deep connection between the locals
+    and the forest\u2019s bounty. Traders dealing in venison, mushrooms, and vegetables
+    will find this land highly profitable, provided they respect the forest's customs."
+  customers: []

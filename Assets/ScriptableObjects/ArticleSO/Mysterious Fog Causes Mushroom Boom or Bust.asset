@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
+  m_Name: Mysterious Fog Causes Mushroom Boom or Bust
+  m_EditorClassIdentifier: 
+  picture: {fileID: 21300000, guid: 91b216ca47ba5614f83b9f61aa3eeab8, type: 3}
+  headline: Mysterious Fog Causes Mushroom Boom or Bust?
+  content: A thick, mysterious fog has settled over the mushroom forests, raising
+    questions about its effect on the Mushroom White harvest. While some foragers
+    report that the fog has accelerated the growth of the mushrooms, others claim
+    that it has stunted their development. With uncertainty looming, traders are
+    bracing for either a massive influx or a sudden shortage of Mushroom White in
+    the market.
+  articleOutcomeDataList:
+  - articleOutcome: {fileID: 11400000, guid: 4e4ec9527a60afb4182ffb332f6ffb8a, type: 2}
+    outcomeChance: 65
+  - articleOutcome: {fileID: 11400000, guid: 80d5cb9fb27f36947a4e111c12416f9c, type: 2}
+    outcomeChance: 30
+  - articleOutcome: {fileID: 11400000, guid: 99959766dc4a4ca48b04ca221d35b1ac, type: 2}
+    outcomeChance: 5

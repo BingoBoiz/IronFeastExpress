@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa6ec4f76fc4ac45abe278621c505d7, type: 3}
+  m_Name: CabinetSetupSO
+  m_EditorClassIdentifier: 
+  cabinetSetups:
+  - cabinetTypeSO: {fileID: 11400000, guid: 9e7dd84efdea94c49b3b8e3a839f73c4, type: 2}
+    trainFloorGridIndex: 0
+    localGridPosition: {x: 0, y: 1}
+  - cabinetTypeSO: {fileID: 11400000, guid: 8b56e6532e6326a4093c59c156d75e87, type: 2}
+    trainFloorGridIndex: 1
+    localGridPosition: {x: 3, y: 1}
+  - cabinetTypeSO: {fileID: 11400000, guid: 3bd021639c91a9647955107cc88977ba, type: 2}
+    trainFloorGridIndex: 1
+    localGridPosition: {x: 2, y: 0}
+  - cabinetTypeSO: {fileID: 11400000, guid: 6774b94dd8264fd4c8bae8205ddeb3ae, type: 2}
+    trainFloorGridIndex: 1
+    localGridPosition: {x: 3, y: 0}
+  - cabinetTypeSO: {fileID: 11400000, guid: 66eea719cd1734f4cb924d00287a678b, type: 2}
+    trainFloorGridIndex: 1
+    localGridPosition: {x: 0, y: 1}
+  - cabinetTypeSO: {fileID: 11400000, guid: 5f0519d7518a4824bbf8fcf3269bad4e, type: 2}
+    trainFloorGridIndex: 1
+    localGridPosition: {x: 2, y: 1}
+  - cabinetTypeSO: {fileID: 11400000, guid: 67f06b393d6e3734eb3b5b08a755da99, type: 2}
+    trainFloorGridIndex: 1
+    localGridPosition: {x: 0, y: 0}
+  - cabinetTypeSO: {fileID: 11400000, guid: 54cea8d9fcf101641be4152ae0ca1ca7, type: 2}
+    trainFloorGridIndex: 1
+    localGridPosition: {x: 1, y: 1}
+  - cabinetTypeSO: {fileID: 11400000, guid: 4b1c053085803ae43ad5e4a5e057cbc8, type: 2}
+    trainFloorGridIndex: 0
+    localGridPosition: {x: 3, y: 1}

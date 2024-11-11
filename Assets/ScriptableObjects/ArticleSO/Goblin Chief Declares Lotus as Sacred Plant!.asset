@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
+  m_Name: Goblin Chief Declares Lotus as Sacred Plant!
+  m_EditorClassIdentifier: 
+  picture: {fileID: 21300000, guid: b6531e99cb668b84796f184adecc4cc2, type: 3}
+  headline: Goblin Chief Declares Lotus as Sacred Plant!
+  content: The Goblin Chief has recently declared the Lotus plant as sacred within
+    his tribe, causing a surge in demand for the plant among his followers. However,
+    rumors suggest that this newfound reverence may also lead to restrictions on
+    Lotus farming, potentially leading to a scarcity of this versatile ingredient.
+    The market is uncertain, and the future of Lotus prices remains unpredictable.
+  articleOutcomeDataList:
+  - articleOutcome: {fileID: 11400000, guid: 9b62e70ff3ba62c4999064ac3d1875df, type: 2}
+    outcomeChance: 60
+  - articleOutcome: {fileID: 11400000, guid: 5958b507aa795404cb27c3f9e6422502, type: 2}
+    outcomeChance: 35
+  - articleOutcome: {fileID: 11400000, guid: ad339f2c7a1527e4d8dc17e3887ac190, type: 2}
+    outcomeChance: 5

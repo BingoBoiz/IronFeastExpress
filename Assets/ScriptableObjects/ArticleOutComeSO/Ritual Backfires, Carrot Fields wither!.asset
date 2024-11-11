@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831ff0bdd49e0364c8805e009c71cb8e, type: 3}
+  m_Name: Ritual Backfires, Carrot Fields wither!
+  m_EditorClassIdentifier: 
+  picture: {fileID: 0}
+  headline: Druid Ritual Leads to Carrot Crop Failure!
+  content: Unfortunately, the ritual appears to have had the opposite effect, as
+    the Carrot fields have begun to wither and die. The resulting shortage has caused
+    Carrot prices to soar, making them a rare and expensive item.
+  effect: Prices for Carrots increase by 50%.
+  kitchenObjectPriceChanges:
+  - kitchenObject: {fileID: 11400000, guid: 83603daa452107e40910b2a3dce739e7, type: 2}
+    priceChange: 50
+  customerTrafficChanges: []

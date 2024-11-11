@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5d80c1b266a8d4f86ce60a8afdc481, type: 3}
+  m_Name: _TestCustomer
+  m_EditorClassIdentifier: 
+  customerID: 01
+  customerName: Eadric the Humble
+  customerOccupation: Peasant
+  favoriteDish:
+  - {fileID: 11400000, guid: 4f5ac31bd8b011c46aaabd710743f4f3, type: 2}
+  hateDish:
+  - {fileID: 11400000, guid: a1a915c5b310a7947a5375b1f60451b2, type: 2}
+  - {fileID: 11400000, guid: 0d4dfa1359a6a6042927592bc5549167, type: 2}
+  - {fileID: 11400000, guid: af199921c937d124ab6bc4aa2bb68319, type: 2}
+  customerDescription: Eadric is a hard-working farmer who has a simple taste in
+    food but appreciates a hearty meal after a long day in the fields. Despite his
+    humble appearance, he knows good food when he tastes it.
+  customerPrefab: {fileID: 6453242471320304009, guid: 441f5ee1c615a0046b77e5e5a7a506b4, type: 3}

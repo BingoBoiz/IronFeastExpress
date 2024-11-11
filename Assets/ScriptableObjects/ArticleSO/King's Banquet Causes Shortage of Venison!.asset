@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
+  m_Name: King's Banquet Causes Shortage of Venison!
+  m_EditorClassIdentifier: 
+  picture: {fileID: 21300000, guid: 91b216ca47ba5614f83b9f61aa3eeab8, type: 3}
+  headline: King's Banquet Causes Shortage of Venison!
+  content: The King has announced a grand banquet to celebrate his victory in a recent
+    battle, and word has it that Venison will be the star dish. This news has caused
+    a rush among local hunters and merchants to supply the royal feast, leading to
+    a potential shortage in the market. With so much Venison being reserved for the
+    banquet, the availability and prices of this prized meat could be affected for
+    days to come.
+  articleOutcomeDataList:
+  - articleOutcome: {fileID: 11400000, guid: bea10cca72d61c94ba133ff949ef0d43, type: 2}
+    outcomeChance: 60
+  - articleOutcome: {fileID: 11400000, guid: a2e44af4311844043a1815b3ca66074b, type: 2}
+    outcomeChance: 35
+  - articleOutcome: {fileID: 11400000, guid: c8a4dac808afad547ae433143f66fda4, type: 2}
+    outcomeChance: 5

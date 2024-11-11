@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831ff0bdd49e0364c8805e009c71cb8e, type: 3}
+  m_Name: Fog Accelerates Mushroom Growth!
+  m_EditorClassIdentifier: 
+  picture: {fileID: 0}
+  headline: Mushroom White Surplus Causes Prices to Drop!
+  content: The mysterious fog has led to an unexpected growth spurt in the Mushroom
+    White harvest. Foragers are returning with baskets overflowing, and the market
+    is now flooded with an abundance of mushrooms, driving prices down.
+  effect: Prices for Mushroom White decrease by 50%.
+  kitchenObjectPriceChanges:
+  - kitchenObject: {fileID: 11400000, guid: 28e6f5cd2886aa94ab9bbc3c9a6d59c2, type: 2}
+    priceChange: -50
+  customerTrafficChanges: []

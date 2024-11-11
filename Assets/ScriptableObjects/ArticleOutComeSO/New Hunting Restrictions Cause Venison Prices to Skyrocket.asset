@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831ff0bdd49e0364c8805e009c71cb8e, type: 3}
+  m_Name: New Hunting Restrictions Cause Venison Prices to Skyrocket
+  m_EditorClassIdentifier: 
+  picture: {fileID: 0}
+  headline: Royal Decree Limits Deer Hunting in Royal Forest
+  content: "In response to the escalating debate, the King has issued a royal decree
+    severely limiting the number of deer that may be hunted in the Royal Forest.
+    The new restrictions are aimed at preserving the deer population, but they have
+    sent shockwaves through the kingdom's markets. With fewer deer allowed to be
+    hunted, the supply of venison has dwindled, leading to a sharp increase in prices.
+    Noble households and taverns alike are scrambling to secure their venison stocks,
+    as the prized meat becomes a rare and expensive commodity. The decree has left
+    many hunters frustrated, but for those who can afford it, venison is now a luxury
+    reserved for the wealthiest.\r"
+  effect: Prices for Venison Roll increase by 60%.
+  kitchenObjectPriceChanges:
+  - kitchenObject: {fileID: 11400000, guid: 05c280a2936715143879bdef4af6acef, type: 2}
+    priceChange: 60
+  customerTrafficChanges: []

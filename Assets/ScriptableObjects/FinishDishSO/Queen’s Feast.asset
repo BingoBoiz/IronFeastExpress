@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950e8858c54e82e4098e25b92475ae81, type: 3}
+  m_Name: "Queen\u2019s Feast"
+  m_EditorClassIdentifier: 
+  ingridientKitchenObjectSOList:
+  - {fileID: 11400000, guid: 6b86ed26222b31044a1355e74db6700b, type: 2}
+  - {fileID: 11400000, guid: 3344b7da693c42e46be76c89a813f0e4, type: 2}
+  - {fileID: 11400000, guid: e1abb698e824d4f46b558be449f5573b, type: 2}
+  finishDishName: "Queen\u2019s Feast"
+  finishDishIcon: {fileID: 0}
+  finishDishPrice: 300

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa21b8da6d83cb4ea397d957fd2f504, type: 3}
+  m_Name: CustomerTable_Interior
+  m_EditorClassIdentifier: 
+  placedCabinetTypeSO: {fileID: 11400000, guid: 4b1c053085803ae43ad5e4a5e057cbc8, type: 2}
+  trainFloorGrid: {fileID: 0}
+  storeImage: {fileID: 21300000, guid: fb1f9b2d2c70f8f44bc123579078536d, type: 3}
+  price: 160
+  priceIncrease: 1.2
+  interiorType: 0
+  storeInteriorName: Customer Table

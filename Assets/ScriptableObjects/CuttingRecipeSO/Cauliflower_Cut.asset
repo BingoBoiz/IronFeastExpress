@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c01595221fde7f4691a67aff9aee648, type: 3}
+  m_Name: Cauliflower_Cut
+  m_EditorClassIdentifier: 
+  input: {fileID: 11400000, guid: 8692abc0eb8a5d641a8982a0545ca6e9, type: 2}
+  output: {fileID: 11400000, guid: 6e057c7d2397e9c47990b9df23690f99, type: 2}
+  cuttingProgressMax: 3

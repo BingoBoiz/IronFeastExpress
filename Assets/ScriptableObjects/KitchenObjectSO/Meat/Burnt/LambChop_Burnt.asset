@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6e701bc1b2acf46b55ebb9e8f3923e, type: 3}
+  m_Name: LambChop_Burnt
+  m_EditorClassIdentifier: 
+  prefabs: {fileID: 400000, guid: 82227fbd02f331046a499f1384e7e0ac, type: 3}
+  sprite: {fileID: 21300000, guid: f610ed1ba602ef24986f37b490597380, type: 3}
+  objectName: Lamb Chop Burnt

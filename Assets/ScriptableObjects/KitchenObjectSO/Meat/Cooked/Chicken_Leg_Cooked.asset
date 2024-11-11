@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6e701bc1b2acf46b55ebb9e8f3923e, type: 3}
+  m_Name: Chicken_Leg_Cooked
+  m_EditorClassIdentifier: 
+  prefabs: {fileID: 7911145983660262482, guid: ef15b6993f0fb6a4bb707e023f340baf, type: 3}
+  sprite: {fileID: 21300000, guid: 587c80a217e2c014394f2624d356b22b, type: 3}
+  objectName: Chicken Leg Cooked

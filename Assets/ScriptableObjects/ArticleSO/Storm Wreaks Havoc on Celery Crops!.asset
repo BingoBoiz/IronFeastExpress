@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
+  m_Name: Storm Wreaks Havoc on Celery Crops!
+  m_EditorClassIdentifier: 
+  picture: {fileID: 21300000, guid: 91b216ca47ba5614f83b9f61aa3eeab8, type: 3}
+  headline: Storm Wreaks Havoc on Celery Crops!
+  content: A fierce storm has swept through the countryside, leaving many Celery
+    fields in ruins. Farmers are scrambling to salvage what they can, but the damage
+    is extensive. As the news spreads, concerns are rising about the availability
+    of Celery in the coming days. With the harvest season at its peak, the storm
+    could have significant repercussions for both supply and pricing.
+  articleOutcomeDataList: []

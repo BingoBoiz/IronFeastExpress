@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
+  m_Name: The Great Venison Debate
+  m_EditorClassIdentifier: 
+  picture: {fileID: 21300000, guid: 91b216ca47ba5614f83b9f61aa3eeab8, type: 3}
+  headline: Noble Debate Sparks Controversy Over Deer Hunting
+  content: A heated debate has erupted among the nobles of the kingdom over the sustainability
+    and ethics of deer hunting, particularly concerning the prized venison meat.
+    At the heart of the controversy is the Royal Forest, a vast expanse of woodland
+    that has long been a hunting ground reserved for the nobility. While some argue
+    that hunting is a vital tradition that provides essential food for the kingdom,
+    others contend that the practice is depleting the deer population at an unsustainable
+    rate. The debate has grown so intense that it has captured the attention of the
+    Royal Court, with whispers of new hunting regulations on the horizon. Meanwhile,
+    hunters and merchants are growing anxious, as any changes to hunting laws could
+    drastically affect the supply of venison across the land. As the nobles continue
+    their quarrel, the outcome of this debate could have far-reaching consequences
+    for both the royal kitchen and the common marketplace.
+  articleOutcomeDataList:
+  - articleOutcome: {fileID: 11400000, guid: e231ab0a0939bda408468d1b9603e279, type: 2}
+    outcomeChance: 80
+  - articleOutcome: {fileID: 11400000, guid: 4ed5eda2b888594489a74c22eb8e351d, type: 2}
+    outcomeChance: 15
+  - articleOutcome: {fileID: 11400000, guid: b8dee75867c90934c8bea962622b9e93, type: 2}
+    outcomeChance: 5

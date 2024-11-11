@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
+  m_Name: Celestial Phenomenon Linked to Unusual Cucumber Growth!
+  m_EditorClassIdentifier: 
+  picture: {fileID: 21300000, guid: 61a0b7febd648b146bf95aad2eaff4ba, type: 3}
+  headline: Celestial Phenomenon Linked to Unusual Cucumber Growth!
+  content: A rare celestial event, known as the "Green Moon," has coincided with
+    an unexpected growth spurt in Cucumber crops. While some believe this is a sign
+    of good fortune, others fear that the sudden abundance might disrupt the market.
+    Speculation is rife, with some predicting a surplus leading to lower prices,
+    while others caution that the quality of the harvest might be compromised, leading
+    to higher prices due to limited availability.
+  articleOutcomeDataList:
+  - articleOutcome: {fileID: 11400000, guid: fc35f7e62ef6fce438b4467612c53459, type: 2}
+    outcomeChance: 60
+  - articleOutcome: {fileID: 11400000, guid: da024fae408a0704690d66640da74e97, type: 2}
+    outcomeChance: 35
+  - articleOutcome: {fileID: 11400000, guid: ad1aa973cbbd46b48a4ca1423324a1c6, type: 2}
+    outcomeChance: 5

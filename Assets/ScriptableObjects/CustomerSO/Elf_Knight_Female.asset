@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5d80c1b266a8d4f86ce60a8afdc481, type: 3}
+  m_Name: Elf_Knight_Female
+  m_EditorClassIdentifier: 
+  customerID: 04
+  customerName: Lady Guinevere
+  customerOccupation: Knight
+  favoriteDish:
+  - {fileID: 11400000, guid: b7951991e4cd63f4cae3c6c116d005d3, type: 2}
+  - {fileID: 11400000, guid: 8ba14d01cdc3cc24eb4f5c316a4e2f69, type: 2}
+  - {fileID: 11400000, guid: a49b465869bd345449b9c0fa6ca38358, type: 2}
+  hateDish:
+  - {fileID: 11400000, guid: 0d4dfa1359a6a6042927592bc5549167, type: 2}
+  - {fileID: 11400000, guid: 251165cfb6d90b84ca8e8833217051e4, type: 2}
+  - {fileID: 11400000, guid: 6676ca613b935a24ebca24344f80d130, type: 2}
+  customerDescription: Noble and graceful, Lady Guinevere appreciates refined and
+    elegant dishes. She prefers meals that are light yet flavorful, befitting her
+    status.
+  customerPrefab: {fileID: 4238219756213088, guid: 281ef91000e34da41be9008a1d743b57, type: 3}

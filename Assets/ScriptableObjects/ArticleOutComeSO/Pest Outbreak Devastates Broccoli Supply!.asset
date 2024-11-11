@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831ff0bdd49e0364c8805e009c71cb8e, type: 3}
+  m_Name: Pest Outbreak Devastates Broccoli Supply!
+  m_EditorClassIdentifier: 
+  picture: {fileID: 0}
+  headline: Broccoli Prices Spike as Pest Infestation Ravages Crops!
+  content: The mysterious pest infestation has wreaked havoc on Broccoli crops, leading
+    to a severe shortage in the market. With limited supplies, prices have skyrocketed,
+    making Broccoli a rare and expensive commodity.
+  effect: Prices for Broccoli increase by 50%.
+  kitchenObjectPriceChanges:
+  - kitchenObject: {fileID: 11400000, guid: 40020a51c826a0a4c9d7cb504e2a212d, type: 2}
+    priceChange: 50
+  customerTrafficChanges: []

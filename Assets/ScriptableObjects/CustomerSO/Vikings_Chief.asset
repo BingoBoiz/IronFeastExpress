@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc5d80c1b266a8d4f86ce60a8afdc481, type: 3}
+  m_Name: Vikings_Chief
+  m_EditorClassIdentifier: 
+  customerID: 05
+  customerName: Ragnor the Red
+  customerOccupation: Viking Chief
+  favoriteDish:
+  - {fileID: 11400000, guid: f3e5609746677f8419f881072875aece, type: 2}
+  - {fileID: 11400000, guid: 883919a56d02771449a0daa4089871db, type: 2}
+  - {fileID: 11400000, guid: 5008e875423137643b598544016f3cf6, type: 2}
+  hateDish:
+  - {fileID: 11400000, guid: 8ba14d01cdc3cc24eb4f5c316a4e2f69, type: 2}
+  - {fileID: 11400000, guid: c2adb2ad6dd368045aed923764453290, type: 2}
+  customerDescription: A fearsome leader, Ragnor prefers meals that are as bold as
+    his reputation. He enjoys dishes with strong flavors and hearty portions.
+  customerPrefab: {fileID: 4195947257436668, guid: 7ccba23de0adee547b8a194255ba2068, type: 3}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831ff0bdd49e0364c8805e009c71cb8e, type: 3}
+  m_Name: Pest Control Efforts Successful, Broccoli Prices Plummet!
+  m_EditorClassIdentifier: 
+  picture: {fileID: 0}
+  headline: Overproduction of Broccoli Floods Markets!
+  content: Despite the initial panic, farmers successfully managed to control the
+    pest infestation. However, the excessive focus on pest control led to an oversupply
+    of Broccoli, causing prices to drop sharply as markets became saturated.
+  effect: Prices for Broccoli decrease by 40%.
+  kitchenObjectPriceChanges:
+  - kitchenObject: {fileID: 11400000, guid: 40020a51c826a0a4c9d7cb504e2a212d, type: 2}
+    priceChange: -40
+  customerTrafficChanges: []

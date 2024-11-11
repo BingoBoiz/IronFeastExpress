@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831ff0bdd49e0364c8805e009c71cb8e, type: 3}
+  m_Name: Frost Damage Less Severe, Carrot Prices Remain Stable.
+  m_EditorClassIdentifier: 
+  picture: {fileID: 0}
+  headline: "Frost\u2019s Impact on Carrots Less Dramatic Than Expected."
+  content: "Contrary to initial reports, the frost damage to Carrotland\u2019s crops
+    has proven to be less severe than feared. While there was some initial panic,
+    the market has stabilized, and Carrot prices have remained relatively stable
+    with only a minor fluctuation."
+  effect: Prices for Carrots increase by 5%.
+  kitchenObjectPriceChanges:
+  - kitchenObject: {fileID: 11400000, guid: 83603daa452107e40910b2a3dce739e7, type: 2}
+    priceChange: 5
+  customerTrafficChanges: []

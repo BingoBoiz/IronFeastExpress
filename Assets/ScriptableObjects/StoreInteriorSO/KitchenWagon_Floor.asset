@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa21b8da6d83cb4ea397d957fd2f504, type: 3}
+  m_Name: KitchenWagon_Floor
+  m_EditorClassIdentifier: 
+  placedCabinetTypeSO: {fileID: 0}
+  trainFloorGrid: {fileID: 1152413647425880853, guid: e4e6703079bc7ef42bb0cb071cc14c2e, type: 3}
+  storeImage: {fileID: 21300000, guid: 9f669835128517944a4d1d28d45d9731, type: 3}
+  price: 300
+  priceIncrease: 1.8
+  interiorType: 1
+  storeInteriorName: Kitchen Wagon

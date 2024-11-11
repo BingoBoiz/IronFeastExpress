@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6e701bc1b2acf46b55ebb9e8f3923e, type: 3}
+  m_Name: Pickle
+  m_EditorClassIdentifier: 
+  prefabs: {fileID: 7289957236434451432, guid: 5d45b315b1648574bb7f0604db4142dc, type: 3}
+  sprite: {fileID: 21300000, guid: 88f904c9f9a9dd3408c6de2741b74f54, type: 3}
+  objectName: Pickle
