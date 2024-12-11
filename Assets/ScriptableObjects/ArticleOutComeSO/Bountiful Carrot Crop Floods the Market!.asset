@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831ff0bdd49e0364c8805e009c71cb8e, type: 3}
+  m_Name: Bountiful Carrot Crop Floods the Market!
+  m_EditorClassIdentifier: 
+  picture: {fileID: 21300000, guid: 30e803419a621e64094848219ef02b30, type: 3}
+  headline: Bountiful Carrot Crop Floods the Market!
+  content: The ancient ritual seems to have worked in favor of the farmers, as Carrot
+    fields are now teeming with an abundant harvest. The surplus has driven prices
+    down, making Carrots a cheap and plentiful commodity.
+  effect: Prices for Carrots decrease by 35%.
+  kitchenObjectPriceChanges:
+  - kitchenObject: {fileID: 11400000, guid: 83603daa452107e40910b2a3dce739e7, type: 2}
+    priceChange: -35
+  customerTrafficChanges: []

@@ -21,4 +21,10 @@ public class TableOrderShownUI : MonoBehaviour
         dishShownSO = e.customerChosenOrderDish;
         awaitingFoodDeliveryIcon.gameObject.GetComponent<Image>().sprite = dishShownSO.finishDishIcon;
     }
+
+    private void OnDestroy()
+    {
+        customerTable.OnCustomerOrderDish -= CustomerTable_OnCustomerOrderDish;
+
+    }
 }

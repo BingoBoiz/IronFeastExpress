@@ -65,7 +65,7 @@ public class StoreProductTemplateUI : MonoBehaviour
     public void UpdateVisualStoreProductUI(StoreProductSO storeProductSO)
     {
         productPriceFloat = storeProductSO.productPrice;
-        productPrice.text = productPriceFloat.ToString() + "$";
+        productPrice.text = productPriceFloat.ToString("F2");
         productIcon.GetComponent<Image>().sprite = storeProductSO.kitchenObjectSO.sprite;
         productName.text = storeProductSO.kitchenObjectSO.objectName;
     }

@@ -60,4 +60,8 @@ public class PauseGameUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnToggleLocalGamePause -= GameManager_OnToggleLocalGamePause;
+    }
 }

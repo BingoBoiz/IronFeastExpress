@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: _FinishDishListSO
   m_EditorClassIdentifier: 
   finishDishSOList:
+  - {fileID: 11400000, guid: 4f5ac31bd8b011c46aaabd710743f4f3, type: 2}
+  - {fileID: 11400000, guid: bea1b2da89c1b3d4ea28c7e14aff8a14, type: 2}
+  - {fileID: 11400000, guid: 883919a56d02771449a0daa4089871db, type: 2}
   - {fileID: 11400000, guid: f3e5609746677f8419f881072875aece, type: 2}
+  - {fileID: 11400000, guid: a1a915c5b310a7947a5375b1f60451b2, type: 2}
   - {fileID: 11400000, guid: 614e536d64ed9aa4f91f5bd6b5141f2f, type: 2}
+  - {fileID: 11400000, guid: 806b8d8aee6a6cc48af97784d612b026, type: 2}
+  - {fileID: 11400000, guid: c2adb2ad6dd368045aed923764453290, type: 2}
+  - {fileID: 11400000, guid: 44ac6f679dc70704aa7bf7ac4001ffbb, type: 2}
+  - {fileID: 11400000, guid: 251165cfb6d90b84ca8e8833217051e4, type: 2}
   - {fileID: 11400000, guid: 380e35bb28e260f4f87d5432ed1e8f5b, type: 2}
   - {fileID: 11400000, guid: 4d43a8b111f89b3478c8d559a40857b8, type: 2}
   - {fileID: 11400000, guid: 375b3f71499f5bf4985ef75c99860922, type: 2}
@@ -28,8 +36,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a49b465869bd345449b9c0fa6ca38358, type: 2}
   - {fileID: 11400000, guid: 4d8aaabf575b1d64a8332258b5ae3ab9, type: 2}
   - {fileID: 11400000, guid: 393236df3897c6d419a68786a66ad6a6, type: 2}
-  - {fileID: 11400000, guid: a1a915c5b310a7947a5375b1f60451b2, type: 2}
-  - {fileID: 11400000, guid: 270d10cb565b1e943888edce245aa779, type: 2}
   - {fileID: 11400000, guid: 8ba14d01cdc3cc24eb4f5c316a4e2f69, type: 2}
-  - {fileID: 11400000, guid: c2adb2ad6dd368045aed923764453290, type: 2}
-  - {fileID: 11400000, guid: 4f5ac31bd8b011c46aaabd710743f4f3, type: 2}

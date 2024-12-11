@@ -30,4 +30,10 @@ public class MultiplayerPauseWaitUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnMultiplayerGamePaused -= GameManager_OnMultiplayerGamePaused;
+        GameManager.Instance.OnMultiplayerGameUnPaused -= GameManager_OnMultiplayerGameUnPaused;
+    }
 }

@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04e3e1a1ef624964da4484ea99eff0f9, type: 2}
   - {fileID: 11400000, guid: 979daa8f668c8d7459fbe9d48ce284e4, type: 2}
   finishDishName: Peasant's Pottage
-  finishDishIcon: {fileID: 21300000, guid: eac7783aa5e1f784486465d32ffb8f4c, type: 3}
+  finishDishIcon: {fileID: 21300000, guid: b6b61fd4126004f48a988227b43e39d2, type: 3}
   finishDishPrice: 150

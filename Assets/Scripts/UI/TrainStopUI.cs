@@ -10,8 +10,6 @@ public class TrainStopUI : MonoBehaviour
 {
     public static TrainStopUI Instance { get; private set; }
 
-    [SerializeField] private Button trainStartRunButton;
-
     private void Awake()
     {
         Instance = this;
@@ -21,19 +19,12 @@ public class TrainStopUI : MonoBehaviour
     {
         Hide();
         GameManager.Instance.OnStateChange += GameManager_OnStateChange;
-        trainStartRunButton.onClick.AddListener(() =>
-        {
-            GameManager.Instance.SetTrainRunningGameState();
-        });
     }
-
-    
 
     private void GameManager_OnStateChange(object sender, System.EventArgs e)
     {
         if (GameManager.Instance.IsTrainStop())
         {
-            //Debug.Log("Is Stopping");
             Show();
             
         }
@@ -43,8 +34,6 @@ public class TrainStopUI : MonoBehaviour
         }
     }
 
-    
-
     private void Show()
     {
         gameObject.SetActive(true);
@@ -52,5 +41,11 @@ public class TrainStopUI : MonoBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnStateChange -= GameManager_OnStateChange;
+
     }
 }

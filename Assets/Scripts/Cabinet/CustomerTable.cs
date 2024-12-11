@@ -8,6 +8,8 @@ using UnityEngine;
 public class CustomerTable : BaseCabinet
 {
     //[SerializeField] private Transform dishHolder;
+    public event EventHandler OnDeliverCorrectDish;
+    public event EventHandler OnDeliverWrongDish;
     public event EventHandler<OnCustomerOrderDishEventArgs> OnCustomerOrderDish;
     public class OnCustomerOrderDishEventArgs : EventArgs
     {
@@ -199,11 +201,9 @@ public class CustomerTable : BaseCabinet
         debugLogTimer += Time.deltaTime;
         if (debugLogTimer >= logInterval)
         {
-            Debug.Log("Current TableState is " + state.Value + " and customer review is " + review);
+            Debug.Log("Current TableState is " + state.Value + " and customer review is " + review.Value);
             debugLogTimer = 0f; // Reset the timer
         }
-        
-
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -306,6 +306,7 @@ public class CustomerTable : BaseCabinet
         isCorrectDishDeliver = true;
         state.Value = TableState.EatingFood;
         eatingTime.Value = 0f;
+        DishDeliveredResultClientRpc(isCorrectDishDeliver);
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -315,11 +316,28 @@ public class CustomerTable : BaseCabinet
         isCorrectDishDeliver = false;
         state.Value = TableState.EatingFood;
         eatingTime.Value = 0f;
+        DishDeliveredResultClientRpc(isCorrectDishDeliver);
+    }
+
+    [ClientRpc]
+    private void DishDeliveredResultClientRpc(bool correctDish) // This is for sound and animation (Visual.cs)
+    {
+        if (correctDish)
+        {
+            OnDeliverCorrectDish?.Invoke(this, EventArgs.Empty);
+        }
+        else
+        {
+            OnDeliverWrongDish?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     [ServerRpc(RequireOwnership = false)]
     private void CustomerDecidingReviewServerRpc()
     {
+        Debug.Log("Customer current review: " + review.Value);
+        Debug.Log("Customer get served correct dish: " + isCorrectDishDeliver);
+        Debug.Log("Customer get clean table fast: " + !isLateForCleaning);
         switch (review.Value)
         {
             case CustomerReview.Awesome: // When customer order their favourite dish in menu
@@ -526,7 +544,7 @@ public class CustomerTable : BaseCabinet
                 break;
         }
         FinanceSystem.Instance.AddingToRevenue(customerPayment);
-        Debug.LogWarning("Customer think the dish is " + review.ToString() + " and pay: " + customerPayment);
+        Debug.Log("Customer think the dish is " + review.ToString() + " and pay: " + customerPayment);
         CustomerLeaveReview(review);
     }
 

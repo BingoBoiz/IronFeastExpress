@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
-using static PlateKitchenObject;
 
 public class RecipeBookManager : NetworkBehaviour
 {
@@ -15,19 +14,31 @@ public class RecipeBookManager : NetworkBehaviour
     {
         public FinishDishSO newUnlockFinishDishSO;
     }
+    public event EventHandler OnDiscoverNewDish;
     public event EventHandler OnUpdateRecipeBook;
 
     [SerializeField] private FinishDishListSO finishDishListSO;
 
     private List<bool> isDishDiscoveryList; // To keep track of what dish is already discover and what dish is not
+    private FinishDishSO[] currentRecipeBookPageDishList = new FinishDishSO[4];
+
     private Transform contentRecipeBookUI;
-    private int dishIncreaseDicoveryIndex = 0; // Only for developer to testing by discovery all the dish
+    private int dishIncreaseDicoveryIndexTesting = 0; // Only for developer to testing by discovery all the dish
 
     private int recipeTemplateIndex = 0;
+    private int pageIndex = 0;
 
     private void Awake()
     {
         Instance = this;
+
+        if (finishDishListSO.finishDishSOList.Count >= 4)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                currentRecipeBookPageDishList[i] = finishDishListSO.finishDishSOList[i];
+            }
+        }
     }
 
     public override void OnNetworkSpawn()
@@ -48,7 +59,7 @@ public class RecipeBookManager : NetworkBehaviour
     }*/
 
     //This should be rename someday, just a terible name
-    public void SetAllTheRecipeTemplateIntoContent(Transform recipeTemplate, Transform content)
+    /*public void SetAllTheRecipeTemplateIntoContent_Old(Transform recipeTemplate, Transform content)
     {
         foreach (Transform child in content)
         {
@@ -63,50 +74,76 @@ public class RecipeBookManager : NetworkBehaviour
 
             // Make a copy of recipeTemplate inside content
             Transform finishDishTransform = Instantiate(recipeTemplate, content);
-            finishDishTransform.GetComponent<RecipeTemplateUI>().SetRecipeTemplateID(recipeTemplateIndex);
+            finishDishTransform.GetComponent<RecipeTemplateUI_Old>().SetRecipeTemplateID(recipeTemplateIndex);
             recipeTemplateIndex++;
             // Set it active
-            int tempRecipeTemplateId = finishDishTransform.GetComponent<RecipeTemplateUI>().GetRecipeTemplateId();
-            //Debug.Log("recipeTemplate Id : " + tempRecipeTemplateId);
+            int tempRecipeTemplateId = finishDishTransform.GetComponent<RecipeTemplateUI_Old>().GetRecipeTemplateId();
             //Debug.Log("finishDishSO: " + finishDishSO.finishDishName);
-            recipeTemplate.GetComponent<RecipeTemplateUI>().Show();
+            recipeTemplate.GetComponent<RecipeTemplateUI_Old>().Show();
 
             // Update the visual of the RecipeTemplateUI through an finishDishSO of that copy 'recipeTemplate'
-            finishDishTransform.GetComponent<RecipeTemplateUI>().UpdateVisualRecipeTemplateUI(finishDishSO);
+            finishDishTransform.GetComponent<RecipeTemplateUI_Old>().UpdateVisualRecipeTemplateUI(finishDishSO);
             
         }
         // Get transform Content of UI (terible way :>> )
         contentRecipeBookUI = content;
-    }
-    public void UpdateRecipeBook(Transform content) // Turn on the discovery dish
+    }*/
+
+    public bool ValidatePageIndex(int pageIndexChangeAmount)
     {
-        for (int i = 0; i < finishDishListSO.finishDishSOList.Count; i++)
+        int pageFutureIndex = pageIndex + pageIndexChangeAmount;
+        int totalPages = Mathf.CeilToInt(finishDishListSO.finishDishSOList.Count / 4f) * 2;
+        if (pageFutureIndex < 0 || pageFutureIndex >= totalPages)
         {
-            if (isDishDiscoveryList[i])
-            {
-                Transform newDiscoverDishTemplate = content.GetChild(i);
-                newDiscoverDishTemplate.GetComponent<RecipeTemplateUI>().SetUnlockRecipe();
-            }
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 
+    public void ChangeRecipeBookContentByPage(int pageIndexChangeAmount)
+    {
+        pageIndex += pageIndexChangeAmount;
+        
+        for (int i = 0; i < 4; i++)
+        {
+            int dishIndex = pageIndex * 2 + i;
+
+            // Ensure we don't go out of bounds
+            if (dishIndex < finishDishListSO.finishDishSOList.Count)
+            {
+                currentRecipeBookPageDishList[i] = finishDishListSO.finishDishSOList[dishIndex];
+            }
+            else
+            {
+                currentRecipeBookPageDishList[i] = null; // You can replace this with a placeholder FinishDishSO if needed
+            }
+        }
+        OnUpdateRecipeBook?.Invoke(this, EventArgs.Empty);
+    }
     public List<bool> GetDishDiscoveryList()
     {
         return isDishDiscoveryList;
     }
 
-    public List<FinishDishSO> GetFinishDishSOList()
+    public FinishDishSO GetDishFromCurrentRecipeBookPageDishList(int dishNumber)
     {
-        return finishDishListSO.finishDishSOList;
+        return currentRecipeBookPageDishList[dishNumber];
+    }
+
+    public FinishDishSO[] GetBookHoldDish()
+    {
+        return currentRecipeBookPageDishList;
     }
 
     public void DiscoveryNewDishForTesting(Transform content)
     {
         //FinishDishSO dishSO = GetFinishDishSOByIndex(dishIncreaseDicoveryIndex);
-        DiscoveryDish(dishIncreaseDicoveryIndex);
-        dishIncreaseDicoveryIndex++;
+        DiscoveryDish(dishIncreaseDicoveryIndexTesting);
+        dishIncreaseDicoveryIndexTesting++;
     }
-
     public void DiscoveryDish(int dishIndex)
     {
         //int dishIndex = GetFinishDishSOIndex(dishIndex);
@@ -132,16 +169,16 @@ public class RecipeBookManager : NetworkBehaviour
         });
         AchievementManager.Instance.RemoveLockedDishList(unlockDish);
 
-        OnUpdateRecipeBook?.Invoke(this, EventArgs.Empty);
+        OnDiscoverNewDish?.Invoke(this, EventArgs.Empty);
     }
 
-    public FinishDishSO GetFinishDishSOByTemplateTransform(Transform finishDishTransform)
+    public FinishDishSO GetFinishDishSOByTemplateTransform(RecipeBookTemplateUI recipeBookTemplateUI)
     {
-        int recipeTemplateIndexGet = finishDishTransform.GetComponent<RecipeTemplateUI>().GetRecipeTemplateId();
+        int recipeTemplateIndexGet = recipeBookTemplateUI.GetRecipeTemplateId();
         Debug.Log("check GetFinishDishSOByTemplateTransform(): " + recipeTemplateIndexGet);
         return finishDishListSO.finishDishSOList[recipeTemplateIndexGet];
     }
-
+    
     public FinishDishSO GetFinishDishSOByIndex(int finishDishSOIndex)
     {
         try
@@ -200,4 +237,24 @@ public class RecipeBookManager : NetworkBehaviour
         }
     }
 
+    public bool IsDiscoveredDish(FinishDishSO dishSO)
+    {
+        return isDishDiscoveryList[finishDishListSO.finishDishSOList.IndexOf(dishSO)];
+    }
+
+    public int GetCurrentPage()
+    {
+        return pageIndex + 1;
+    }
+
+    public int GetBookMaxPage()
+    {
+        if (finishDishListSO == null || finishDishListSO.finishDishSOList == null || finishDishListSO.finishDishSOList.Count == 0)
+        {
+            return 0; // No dishes, no pages
+        }
+
+        // Each page contains 2 dishes, so calculate the total pages needed
+        return Mathf.CeilToInt(finishDishListSO.finishDishSOList.Count / 4f) * 2;
+    }
 }

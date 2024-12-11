@@ -290,4 +290,9 @@ public class Stove : BaseCabinet,IHasProgress
         }
         return null;
     }
+
+    public bool IsBurned()
+    {
+        return state.Value == State.Burned;
+    }
 }

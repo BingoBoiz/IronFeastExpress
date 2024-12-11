@@ -9,7 +9,7 @@ public class MusicManager : MonoBehaviour
     public static MusicManager Instance {  get; private set; }
 
     private AudioSource audioSource;
-    private float volume = .2f;
+    private float volume = .3f;
 
     private void Awake()
     {
@@ -18,10 +18,23 @@ public class MusicManager : MonoBehaviour
         volume = PlayerPrefs.GetFloat(PLAYER_PREFS_MUSIC_VOLUME, .3f);
         audioSource.volume = volume;
     }
-    public void ChangeVolumn()
+    public void IncreaseVolumn()
     {
         volume += .1f;
         if (volume > 1f)
+        {
+            volume = 1f;
+        }
+        audioSource.volume = volume;
+
+        PlayerPrefs.SetFloat(PLAYER_PREFS_MUSIC_VOLUME, volume);
+        PlayerPrefs.Save();
+    }
+
+    public void DecreaseVolumn()
+    {
+        volume -= .1f;
+        if (volume < 0f)
         {
             volume = 0f;
         }

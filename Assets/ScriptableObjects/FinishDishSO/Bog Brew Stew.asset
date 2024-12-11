@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 979daa8f668c8d7459fbe9d48ce284e4, type: 2}
   - {fileID: 11400000, guid: 3344b7da693c42e46be76c89a813f0e4, type: 2}
   finishDishName: Bog Brew Stew
-  finishDishIcon: {fileID: 0}
+  finishDishIcon: {fileID: 21300000, guid: ac3f9ac4a3694ed4bb21dda914190953, type: 3}
   finishDishPrice: 200

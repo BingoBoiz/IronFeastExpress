@@ -10,12 +10,9 @@ public class CuttingCabinet : BaseCabinet, IHasProgress
     public event EventHandler<IHasProgress.OnProgressChangedEventArgs> OnProgressChanged;
     
     public event EventHandler OnCutObject;
-    
-
 
     [SerializeField] private CuttingRecipeSO[] cutKitchenObjectSOArray;
     private int cuttingProgress;
-
 
     public override void Interact(Player player)
     {

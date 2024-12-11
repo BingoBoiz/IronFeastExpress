@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 979daa8f668c8d7459fbe9d48ce284e4, type: 2}
   - {fileID: 11400000, guid: 3344b7da693c42e46be76c89a813f0e4, type: 2}
   finishDishName: "Buccaneer\u2019s Broth"
-  finishDishIcon: {fileID: 0}
+  finishDishIcon: {fileID: 21300000, guid: da5fd380b4b021a45bc62628fbeb87c8, type: 3}
   finishDishPrice: 300

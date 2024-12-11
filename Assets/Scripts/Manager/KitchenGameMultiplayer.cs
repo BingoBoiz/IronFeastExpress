@@ -103,11 +103,11 @@ public class KitchenGameMultiplayer : NetworkBehaviour
 
     private void NetworkManager_ConnectionApprovalCallback(NetworkManager.ConnectionApprovalRequest request, NetworkManager.ConnectionApprovalResponse response)
     {
-        Debug.Log("request.ClientNetworkId: " + request.ClientNetworkId);
+        //Debug.Log("request.ClientNetworkId: " + request.ClientNetworkId);
 
         if (request.ClientNetworkId == NetworkManager.Singleton.LocalClientId)
         {
-            Debug.Log("ClientNetworkId != LocalClientId");
+            
             Debug.Log("LocalClientId: " + NetworkManager.Singleton.LocalClientId);
         }
         if (SceneManager.GetActiveScene().name != Loader.Scene.CharacterSelectScene.ToString())

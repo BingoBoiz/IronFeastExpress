@@ -74,16 +74,15 @@ public class BuildingGhostSystem : NetworkBehaviour
     {
         floorShowCabinet = null;
         HideVisual();
-        Debug.Log("floorShowCabinet = null");
+        //Debug.Log("floorShowCabinet = null");
     }
 
     public void SelectedFloorGridChanged(ulong ClientId)
     {
         floorShowCabinet = TrainManager.Instance.GetFloorInteractedByClientIndex(ClientId);
         ShowVisual();
-        Debug.Log("floorShowCabinet: " + floorShowCabinet);
+        //Debug.Log("floorShowCabinet: " + floorShowCabinet);
     }
-
 
     private void Update()
     {

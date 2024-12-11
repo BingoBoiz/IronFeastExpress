@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : NetworkBehaviour
 {
     private const string PLAYER_PREFS_SOUND_EFFECTS_VOLUME = "SoundEffectsVolume";
     public static SoundManager Instance {  get; private set; }
@@ -17,11 +18,8 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        /*DeliveryManager.Instance.OnRecipeSuccess += DeliveryManager_OnRecipeSuccess;
-        DeliveryManager.Instance.OnRecipeFailed += DeliveryManager_OnRecipeFailed;*/
-        //CuttingCabinet.OnAnyCut += CuttingCounter_OnAnyCut;
         Player.OnAnyPlayerPickedSomething += Player_OnPickedSomething;
-        //BaseCabinet.OnDropSomething += BaseCounter_OnDropSomething;
+        BaseCabinet.OnAnyObjectPlacedHere += BaseCounter_OnAnyObjectPlacedHere;
         TrashHole.OnAnyObjectTrashed += TrashCounter_OnAnyObjectTrashed;
     }
 
@@ -31,7 +29,7 @@ public class SoundManager : MonoBehaviour
         PlaySound(tutorialSFX.trash, trashCounter.transform.position);
     }
 
-    private void BaseCounter_OnDropSomething(object sender, System.EventArgs e)
+    private void BaseCounter_OnAnyObjectPlacedHere(object sender, System.EventArgs e)
     {
         BaseCabinet baseCounter = sender as BaseCabinet;
         PlaySound(tutorialSFX.objectDrop, baseCounter.transform.position);
@@ -43,25 +41,6 @@ public class SoundManager : MonoBehaviour
         PlaySound(tutorialSFX.objectPickUp, player.transform.position);
     }
 
-    private void CuttingCounter_OnAnyCut(object sender, System.EventArgs e)
-    {
-        CuttingCabinet cuttingCounter = sender as CuttingCabinet;
-        PlaySound(tutorialSFX.chop, cuttingCounter.transform.position);
-    }
-
-    // THIS SHOULD BE FIX FOR CUSTOMER TABLE
-    /*private void DeliveryManager_OnRecipeFailed(object sender, System.EventArgs e)
-    {
-        DeliveryCounter deliveryCounter = DeliveryCounter.Instance;
-        PlaySound(tutorialSFX.deliveryFail, deliveryCounter.transform.position);
-    }
-
-    private void DeliveryManager_OnRecipeSuccess(object sender, System.EventArgs e)
-    {
-        DeliveryCounter deliveryCounter = DeliveryCounter.Instance;
-        PlaySound(tutorialSFX.deliverySuccess, deliveryCounter.transform.position);
-    }*/
-
     private void PlaySound(AudioClip[] audioClipArray, Vector3 position, float volumeMultiplier = 1f)
     {
         PlaySound(audioClipArray[Random.Range(0, audioClipArray.Length)], position, volumeMultiplier);
@@ -69,6 +48,21 @@ public class SoundManager : MonoBehaviour
     private void PlaySound(AudioClip audioClip, Vector3 position, float volumeMultiplier = 1f)
     {
         AudioSource.PlayClipAtPoint(audioClip, position, volumeMultiplier * volume);
+    }
+
+    public void CuttingCabinetOnCut(Transform cabinet)
+    {
+        PlaySound(tutorialSFX.chop, cabinet.position);
+    }
+
+    public void CustomerTableDeliverCorrectDish(Transform cabinet)
+    {
+        PlaySound(tutorialSFX.deliverySuccess, cabinet.position);
+    }
+
+    public void CustomerTableDeliverWrongDish(Transform cabinet)
+    {
+        PlaySound(tutorialSFX.deliveryFail, cabinet.position);
     }
 
     public void PlayFootstepsSound(Vector3 position, float volume)
@@ -86,10 +80,21 @@ public class SoundManager : MonoBehaviour
         PlaySound(tutorialSFX.warning, position);
     }
 
-    public void ChangeVolumn()
+    public void IncreaseVolumn()
     {
         volume += .1f;
         if (volume > 1f)
+        {
+            volume = 1f;
+        }
+        PlayerPrefs.SetFloat(PLAYER_PREFS_SOUND_EFFECTS_VOLUME, volume);
+        PlayerPrefs.Save();
+    }
+
+    public void DecreaseVolumn()
+    {
+        volume -= .1f;
+        if (volume < 0f)
         {
             volume = 0f;
         }

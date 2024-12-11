@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,6 +14,16 @@ public class NextStopSignUI : MonoBehaviour
     {
         Hide();
         GameManager.Instance.OnStateChange += GameManager_OnStateChange;
+        TrainManager.Instance.OnDoneSetUp += TrainManager_OnDoneSetUp;
+    }
+
+    private void TrainManager_OnDoneSetUp(object sender, System.EventArgs e)
+    {
+        MenuBoard.Instance.OnInteractMenuBoard += MenuBoard_OnInteractMenuBoard;
+    }
+    private void MenuBoard_OnInteractMenuBoard(object sender, EventArgs e)
+    {
+        Hide();
     }
 
     private void GameManager_OnStateChange(object sender, System.EventArgs e)
@@ -41,7 +52,7 @@ public class NextStopSignUI : MonoBehaviour
         }
 
         trainStopLocation.text = "STOPPING AT " + LandManager.Instance.GetTodayLandSO().landName;
-        Debug.Log("UpdateLocationText: " + trainStopLocation.text);
+        //Debug.Log("UpdateLocationText: " + trainStopLocation.text);
     }
 
     private void Show()
@@ -51,5 +62,11 @@ public class NextStopSignUI : MonoBehaviour
     private void Hide()
     {
         gameObject.SetActive(false);
+    }
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnStateChange -= GameManager_OnStateChange;
+        TrainManager.Instance.OnDoneSetUp -= TrainManager_OnDoneSetUp;
+        MenuBoard.Instance.OnInteractMenuBoard -= MenuBoard_OnInteractMenuBoard;
     }
 }

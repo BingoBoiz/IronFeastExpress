@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 426a53b63986894438a8a719ce92209e, type: 2}
   - {fileID: 11400000, guid: 151fe8a6a3458904783df5313cd56982, type: 2}
   finishDishName: "Knight\u2019s Feast"
-  finishDishIcon: {fileID: 21300000, guid: 817980132b15dce449d42ad05ca8e87b, type: 3}
+  finishDishIcon: {fileID: 21300000, guid: 2d11951b72385c1499663da434fe728f, type: 3}
   finishDishPrice: 200

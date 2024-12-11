@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 151fe8a6a3458904783df5313cd56982, type: 2}
   - {fileID: 11400000, guid: 3344b7da693c42e46be76c89a813f0e4, type: 2}
   finishDishName: "Witch\u2019s Brew Stew"
-  finishDishIcon: {fileID: 0}
+  finishDishIcon: {fileID: 21300000, guid: eb21898357959324abfc554d24ebcd90, type: 3}
   finishDishPrice: 200

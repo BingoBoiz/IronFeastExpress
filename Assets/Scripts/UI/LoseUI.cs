@@ -55,4 +55,9 @@ public class LoseUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    private void OnDestroy()
+    {
+        OpenAndCloseSign.Instance.OnBankRupt -= OpenCloseSign_OnBankRupt;
+    }
 }

@@ -24,7 +24,7 @@ public class PlayerMainMenuIdleAnimator : MonoBehaviour
         {
             // Randomly choose an idle animation from the list
             string randomIdleTrigger = idleAnimationTriggers[Random.Range(0, idleAnimationTriggers.Length)];
-            Debug.LogWarning("randomIdleTrigger: " + randomIdleTrigger);
+            
             // Set the trigger to play the chosen idle animation
             animator.SetTrigger(randomIdleTrigger);
 

@@ -33,7 +33,8 @@ public class StoreManagerUI : MonoBehaviour
         closeButton.onClick.AddListener(() =>
         {
             Hide();
-            StoreDesk.Instance.ToggleIsInteracting();
+            StoreDesk.Instance.ToggleIsInteractingServerRpc();
+            StoreUI.Instance.Hide();
         });
 
         buyButton.onClick.AddListener(() =>
@@ -113,6 +114,12 @@ public class StoreManagerUI : MonoBehaviour
     public Transform GetInteriorScrollViewContent()
     {
         return interiorScrollViewContent;
+    }
+    private void OnDestroy()
+    {
+        StoreDesk.OnInteractStore -= StoreDesk_OnClickStore;
+        GameManager.Instance.OnStateChange -= GameManager_OnStateChange;
+        StoreManager.Instance.OnTotalCostChange -= StoreManager_OnTotalCostChange;
     }
 
 }

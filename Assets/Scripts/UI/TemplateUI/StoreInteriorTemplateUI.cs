@@ -76,7 +76,7 @@ public class StoreInteriorTemplateUI : MonoBehaviour
         currentNumberText.text = currentAddInteriorCount.ToString();
 
         // Update the visual price display
-        interiorPrice.text = currentInteriorPrice.ToString("F2") + "$";
+        interiorPrice.text = currentInteriorPrice.ToString("F2");
 
         OnStoreInteriorCountChanged?.Invoke(this, new OnStoreInteriorCountChangedEventArgs
         {
@@ -95,7 +95,7 @@ public class StoreInteriorTemplateUI : MonoBehaviour
     {
         this.storeInteriorSO = storeInteriorSO;
         currentInteriorPrice = storeInteriorSO.price;
-        interiorPrice.text = currentInteriorPrice.ToString() + "$";
+        interiorPrice.text = currentInteriorPrice.ToString("F2");
         //interiorIcon.GetComponent<Image>().sprite = storeInteriorSO.placedCabinetTypeSO.sprite;
         interiorIcon.GetComponent<Image>().sprite = storeInteriorSO.storeImage;
         interiorName.text = storeInteriorSO.storeInteriorName;

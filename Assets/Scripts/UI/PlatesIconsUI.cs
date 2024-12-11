@@ -36,4 +36,10 @@ public class PlatesIconsUI : MonoBehaviour
             iconTransform.GetComponent<PlateIconSingleUI>().SetKitchenObjectSO(kitchenObjectSO);
         }   
     }
+
+    private void OnDestroy()
+    {
+        plateKitchenObject.OnIngredientAdded -= PlateKitchenObject_OnIngredientAdded;
+
+    }
 }

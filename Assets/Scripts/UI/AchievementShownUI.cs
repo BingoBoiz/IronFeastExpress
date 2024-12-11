@@ -28,11 +28,16 @@ public class AchievementShownUI : MonoBehaviour
 
     private void Shown()
     {
-        this.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
     private void Hide()
     {
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        AchievementManager.Instance.OnNewRecipeDishUnlock -= AchievementManager_OnNewRecipeDishUnlock;
     }
 
 }

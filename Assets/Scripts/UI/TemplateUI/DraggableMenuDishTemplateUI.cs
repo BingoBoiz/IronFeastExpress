@@ -9,6 +9,11 @@ public class DraggableMenuDishTemplateUI : MonoBehaviour,IBeginDragHandler, IDra
     private Image image;
     [HideInInspector] public Transform parentAfterDrag;
 
+    [SerializeField] private Transform OnDragPrefab;
+    private int dishIndex;
+    private Transform OnDraggingPrefab;
+    private FinishDishSO finishDishSOTemp;
+
     private void Start()
     {
         image = GetComponent<Image>();
@@ -17,15 +22,23 @@ public class DraggableMenuDishTemplateUI : MonoBehaviour,IBeginDragHandler, IDra
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root); // transform.root is The Canvas
+        /*gameObject.SetActive(false);*/
+        OnDraggingPrefab = Instantiate(OnDragPrefab, transform.root);
+        finishDishSOTemp = RecipeBookManager.Instance.GetFinishDishSOByIndex(dishIndex);
+        OnDraggingPrefab.GetComponent<MenuDishTemplateDraggingGhost>().UpdateMenuDishTemplateVisual(finishDishSOTemp);
+        OnDraggingPrefab.SetAsLastSibling();
+        OnDraggingPrefab.GetComponent<Image>().raycastTarget = false;
+
+        /*OnDragPrefab.SetParent(transform.root); // transform.root is The Canvas
         transform.SetAsLastSibling(); //Move it to top so it cannot be cover by anything
 
-        image.raycastTarget = false; // make sure the image doesnt block the raycast for indetify dropable places
+        image.raycastTarget = false; // make sure the image doesnt block the raycast for indetify dropable places*/
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;
+        Debug.Log("Input.mousePosition: " + Input.mousePosition);
+        OnDraggingPrefab.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -33,9 +46,10 @@ public class DraggableMenuDishTemplateUI : MonoBehaviour,IBeginDragHandler, IDra
         // Check if the tranform is parentAfterDrag
         if (IsPointerOverUIObject(parentAfterDrag as RectTransform, eventData)) //NOTE: This should destroy new transform and make a copy of menuDishTemplate + updatevisual that template
         {
-            Debug.Log("Pointer is over the parentAfterDrag.");
-            transform.SetParent(parentAfterDrag);
-            image.raycastTarget = false;
+            Debug.Log("Pointer is over the parentAfterDrag. Notthing happen");
+            Destroy(OnDraggingPrefab.gameObject);
+            /*transform.SetParent(parentAfterDrag);
+            image.raycastTarget = false;*/
         }
         // If the tranform is not parentAfterDrag
         else
@@ -43,8 +57,8 @@ public class DraggableMenuDishTemplateUI : MonoBehaviour,IBeginDragHandler, IDra
             Debug.Log("Pointer is not over the parentAfterDrag.");
 
             Debug.Log("Proceed to destroy this object.");
-            Destroy(gameObject);
-            
+            Destroy(OnDraggingPrefab.gameObject);
+            MenuManagerUI.Instance.RemoveTemplateToMenuBoardList(dishIndex);
         }
     }
 
@@ -58,5 +72,9 @@ public class DraggableMenuDishTemplateUI : MonoBehaviour,IBeginDragHandler, IDra
         return rectTransform.rect.Contains(localMousePosition);
     }
 
+    public void SetDishIndex(int index)
+    {
+        this.dishIndex = index;
+    }
 
 }

@@ -54,4 +54,9 @@ public class ResultUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnStateChange -= GameManager_OnStateChange;
+    }
 }

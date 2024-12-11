@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
   m_Name: Mysterious Pest Infestation Threatens Broccoli Harvest!
   m_EditorClassIdentifier: 
-  picture: {fileID: 21300000, guid: 91b216ca47ba5614f83b9f61aa3eeab8, type: 3}
+  picture: {fileID: 21300000, guid: 05e1055b3f018aa4fb656733b6293696, type: 3}
   headline: Mysterious Pest Infestation Threatens Broccoli Harvest!
   content: Farmers in the northern region have reported a sudden outbreak of mysterious
     pests targeting Broccoli crops. This unexpected invasion has raised concerns

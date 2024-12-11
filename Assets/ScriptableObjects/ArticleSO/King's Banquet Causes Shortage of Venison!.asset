@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
   m_Name: King's Banquet Causes Shortage of Venison!
   m_EditorClassIdentifier: 
-  picture: {fileID: 21300000, guid: 91b216ca47ba5614f83b9f61aa3eeab8, type: 3}
+  picture: {fileID: 21300000, guid: ff151d3349b156a49b33367853ad4bbe, type: 3}
   headline: King's Banquet Causes Shortage of Venison!
   content: The King has announced a grand banquet to celebrate his victory in a recent
     battle, and word has it that Venison will be the star dish. This news has caused

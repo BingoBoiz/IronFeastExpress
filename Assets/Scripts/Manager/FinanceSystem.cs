@@ -13,7 +13,7 @@ public class FinanceSystem : NetworkBehaviour
         public float currentPlayerBalance;
     }
 
-    private NetworkVariable<float> playerBalance = new NetworkVariable<float>(400);
+    private NetworkVariable<float> playerBalance = new NetworkVariable<float>(1000);
     private NetworkVariable<float> currentRevenue = new NetworkVariable<float>(0);
     private NetworkVariable<float> storeExpenditure = new NetworkVariable<float>(0);
     private NetworkVariable<float> fuelExpenditure = new NetworkVariable<float>(0);
@@ -62,12 +62,12 @@ public class FinanceSystem : NetworkBehaviour
     {
         if (GameManager.Instance.IsTrainStop())
         {
-            Debug.Log("GameManager.Instance.IsTrainStop()");
+            
             ResetResultVaribleServerRpc();
         }
         if (GameManager.Instance.IsTrainRunning())
         {
-            Debug.Log("GameManager.Instance.IsTrainRunning()");
+            
             CalculateFuelExpenditureServerRpc();
         }
     }

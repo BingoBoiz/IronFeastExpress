@@ -12,9 +12,7 @@ public class GamePlayingUI : MonoBehaviour
 
     private void Start()
     {
-        //NewspaperManagerUI.Instance.Hide();
         GameManager.Instance.OnDayIncrease += GameManager_OnDayIncrease;
-        daysCount.text = "Days : " + GameManager.Instance.GetDays().ToString();
         FinanceSystem.Instance.OnPlayerBalanceChanged += FinanceSystem_OnPlayerBalanceChanged;
     }
 
@@ -27,5 +25,11 @@ public class GamePlayingUI : MonoBehaviour
     private void GameManager_OnDayIncrease(object sender, EventArgs e)
     {
         daysCount.text = "Days : " + GameManager.Instance.GetDays().ToString();
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnDayIncrease -= GameManager_OnDayIncrease;
+        FinanceSystem.Instance.OnPlayerBalanceChanged -= FinanceSystem_OnPlayerBalanceChanged;
     }
 }

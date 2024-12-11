@@ -69,7 +69,7 @@ public class StoreManager : NetworkBehaviour
     {
         foreach (StoreInteriorSO storeInteriorSO in storeInteriorArray)
         {
-            Debug.Log("storeInteriorSO: "+ storeInteriorSO);
+            //Debug.Log("storeInteriorSO: "+ storeInteriorSO);
             Transform productInteriorTransform = Instantiate(storeInteriorTemplate, contentStoreInteriorManagerUI);
 
             productInteriorTransform.gameObject.SetActive(true);

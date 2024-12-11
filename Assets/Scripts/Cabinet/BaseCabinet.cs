@@ -8,7 +8,6 @@ public class BaseCabinet : NetworkBehaviour, IKitchenObjectParent
 {
     public static event EventHandler OnAnyObjectPlacedHere;
 
-    //[SerializeField] private KitchenObjectSO kitchenObjectSO;
     [SerializeField] private Transform placeHolder;
     [SerializeField] private PlacedInteriorTypeSO placedInteriorTypeSO;
 
@@ -37,6 +36,7 @@ public class BaseCabinet : NetworkBehaviour, IKitchenObjectParent
     public void SetKitchenObject(KitchenObject kitchenObject)
     {
         this.kitchenObject = kitchenObject;
+        OnAnyObjectPlacedHere?.Invoke(this, EventArgs.Empty);
     }
     public KitchenObject GetKitchenObject()
     {

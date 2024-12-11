@@ -73,7 +73,7 @@ public class TrainManager : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void PlaceCabinetOnGridServerRpc(int placedCabinetTypeSOIndex, int floorGridIndex, Vector2Int gridPosition)
     {
-        Debug.Log("PlaceCabinetOnGridServerRpc (" + placedCabinetTypeSOIndex + ", " + floorGridIndex + ", " + gridPosition + ") ");
+        //Debug.Log("PlaceCabinetOnGridServerRpc (" + placedCabinetTypeSOIndex + ", " + floorGridIndex + ", " + gridPosition + ") ");
 
         if (floorGridIndex < 0 || floorGridIndex >= floorList.Count)
         {
@@ -106,14 +106,6 @@ public class TrainManager : NetworkBehaviour
             {
                 Debug.Log("storeInteriorSOList contains cabinet");
             }
-        }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            AddWagon(0, 1);
         }
     }
 

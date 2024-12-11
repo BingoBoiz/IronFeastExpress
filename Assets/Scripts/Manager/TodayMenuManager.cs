@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class TodayMenuManager : NetworkBehaviour
+public class TodayMenuManager : MonoBehaviour
 {
     public static TodayMenuManager Instance {  get; private set; }
 
-
     [SerializeField] private FinishDishListSO currentDishMenuListSO;
-
     private List<FinishDishSO> tempDishMenuListSO;
+
+    // NETCODE RPC CANNOT HAVE TRANFROM PARAMETER SO GET FROM MENUMANAGERUI
+    private Transform menuDishTemplate;
+    private Transform menuDishDraggableTemplate;
+    private Transform menuDishContent;
+    private Transform menuDishDraggableContent;
 
     private void Awake()
     {
         Instance = this;
     }
-    public override void OnNetworkSpawn()
+
+    private void Start()
     {
         tempDishMenuListSO = new(currentDishMenuListSO.finishDishSOList);
     }
 
-    public void SetAllMenuDishTemplateToContent(Transform menuDishTemplate, Transform menuDishContent)
+    public void SetAllMenuDishTemplateToContent(Transform menuDishTemplate, Transform menuDishDraggableTemplate, Transform menuDishContent, Transform menuDishDraggableContent)
     {
         foreach (Transform child in menuDishContent)
         {
@@ -33,48 +38,44 @@ public class TodayMenuManager : NetworkBehaviour
         foreach (FinishDishSO menuDishSO in tempDishMenuListSO)
         {
             //Debug.Log("Dish Index:" + tempDishMenuListSO.finishDishSOList.IndexOf(menuDishSO));
-
+            int dishIndex = RecipeBookManager.Instance.GetFinishDishSOIndex(menuDishSO);
             // Make a copy of menuDishTemplate inside content
             Transform finishDishTransform = Instantiate(menuDishTemplate, menuDishContent);
+            Transform addedDishDraggableTransform = Instantiate(menuDishDraggableTemplate, menuDishDraggableContent);
 
             // Update the visual of the RecipeTemplateUI through an finishDishSO of that copy 'recipeTemplate'
-            finishDishTransform.GetComponent<MenuDishTemplateUI>().UpdateMenuDishTemplateVisual(menuDishSO);
+            finishDishTransform.GetComponent<MenuBoardDishTemplateUI>().UpdateMenuDishTemplateVisual(menuDishSO);
+            addedDishDraggableTransform.GetComponent<DraggableMenuDishTemplateUI>().SetDishIndex(dishIndex);
         }
     }
 
-    [ServerRpc(RequireOwnership = false)]
-    private void UpdateMenuDishUIServerRpc()
+    public void AddDishToMenuBoardList(FinishDishSO finishDishSO)
     {
-        Debug.Log("");
-        UpdateMenuDishUIClientRpc();
-    }
-
-    [ClientRpc]
-    private void UpdateMenuDishUIClientRpc()
-    {
-
-    }
-
-    public void AddTemplateToDishMenuList(FinishDishSO finishDishSO, Transform menuDishTemplate, Transform menuDishContent)
-    {
-        int dishIndex = RecipeBookManager.Instance.GetFinishDishSOIndex(finishDishSO);
-        AddTemplateToDishMenuListServerRpc(dishIndex);
-        Transform addedDishTransform = Instantiate(menuDishTemplate, menuDishContent);
-        addedDishTransform.GetComponent<MenuDishTemplateUI>().UpdateMenuDishTemplateVisual(finishDishSO);
-    }
-
-    [ServerRpc(RequireOwnership = false)]
-    private void AddTemplateToDishMenuListServerRpc(int dishIndex)
-    {
-        AddTemplateToDishMenuListClientRpc(dishIndex);
-    }
-
-    [ClientRpc]
-    private void AddTemplateToDishMenuListClientRpc(int dishIndex)
-    {
-        FinishDishSO finishDishSO = RecipeBookManager.Instance.GetFinishDishSOByIndex(dishIndex);
         tempDishMenuListSO.Add(finishDishSO);
     }
 
+    public void RemoveDishFromMenuBoardList(int dishIndex)
+    {
+        FinishDishSO finishDishSO = RecipeBookManager.Instance.GetFinishDishSOByIndex(dishIndex);
+        tempDishMenuListSO.Remove(finishDishSO);
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void RemoveTemplateToDishMenuListServerRpc(int dishIndex)
+    {
+        RemoveTemplateToDishMenuListClientRpc(dishIndex);
+    }
+
+    [ClientRpc]
+    private void RemoveTemplateToDishMenuListClientRpc(int dishIndex)
+    {
+        FinishDishSO dishSO = RecipeBookManager.Instance.GetFinishDishSOByIndex(dishIndex);
+        tempDishMenuListSO.Remove(dishSO);
+    }
+
     public FinishDishListSO GetTodayMenuDishList() { return currentDishMenuListSO; }
+    public int GetIndexFromTempDishMenuListSO(FinishDishSO dishSO)
+    {
+        return tempDishMenuListSO.IndexOf(dishSO);
+    }
 }

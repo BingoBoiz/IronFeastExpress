@@ -40,3 +40,6 @@ MonoBehaviour:
   - cabinetTypeSO: {fileID: 11400000, guid: 4b1c053085803ae43ad5e4a5e057cbc8, type: 2}
     trainFloorGridIndex: 0
     localGridPosition: {x: 3, y: 1}
+  - cabinetTypeSO: {fileID: 11400000, guid: 13354a557dc27034fa205c5eac8d68c2, type: 2}
+    trainFloorGridIndex: 1
+    localGridPosition: {x: 1, y: 0}

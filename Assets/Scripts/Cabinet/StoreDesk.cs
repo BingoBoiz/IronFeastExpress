@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 public class StoreDesk : BaseDesk
@@ -17,7 +18,7 @@ public class StoreDesk : BaseDesk
     
     public override void Interact(Player player)
     {
-        ToggleIsInteracting();
+        ToggleIsInteractingServerRpc();
         if (isInteractingBySomePlayer)
         {
             OnInteractStore?.Invoke(this, EventArgs.Empty);
@@ -44,7 +45,15 @@ public class StoreDesk : BaseDesk
         }
     }
 
-    public void ToggleIsInteracting() 
+    [ServerRpc(RequireOwnership = false)]
+    public void ToggleIsInteractingServerRpc()
+    {
+        ToggleIsInteractingClientRpc();
+
+    }
+
+    [ClientRpc]
+    private void ToggleIsInteractingClientRpc()
     {
         isInteractingBySomePlayer = !isInteractingBySomePlayer;
     }

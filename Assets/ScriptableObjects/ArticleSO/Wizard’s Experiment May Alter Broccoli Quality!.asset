@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
   m_Name: "Wizard\u2019s Experiment May Alter Broccoli Quality!"
   m_EditorClassIdentifier: 
-  picture: {fileID: 21300000, guid: 91b216ca47ba5614f83b9f61aa3eeab8, type: 3}
+  picture: {fileID: 21300000, guid: 3034b1878003e73409df034a4d9ed66b, type: 3}
   headline: "Wizard\u2019s Experiment May Alter Broccoli Quality!"
   content: A renowned wizard has been conducting experiments on local Broccoli crops,
     attempting to enhance their size and flavor through magical means. While some

@@ -117,7 +117,7 @@ public class PlayerPlacingCabinet : NetworkBehaviour
             if (foundSystem != null)
             {
                 buildingGhostSystem = foundSystem;
-                Debug.Log("BuildingGhostSystem assigned via search.");
+                //Debug.Log("BuildingGhostSystem assigned via search.");
                 break;
             }
         }
@@ -126,7 +126,7 @@ public class PlayerPlacingCabinet : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void SpawnBuildingGhostSystemServerRpc(ulong clientId)
     {
-        Debug.Log("SpawnBuildingGhostSystemServerRpc");
+        //Debug.Log("SpawnBuildingGhostSystemServerRpc");
 
         // Instantiate the prefab and set ownership
         GameObject buildingGhostSystemObject = Instantiate(buildingGhostSystemGameObject);
@@ -136,20 +136,6 @@ public class PlayerPlacingCabinet : NetworkBehaviour
         buidlingGhostSystemNetworkObj.transform.position = GetComponent<Player>().GetPlayerSpawnPositionList()[(int)OwnerClientId];
         buidlingGhostSystemNetworkObj.TrySetParent(GetComponent<NetworkObject>(), true);
 
-    }
-
-    private void Start()
-    {
-        gameInput.OnGrabAction += GameInput_OnGrabAction;
-    }
-
-    private void GameInput_OnGrabAction(object sender, EventArgs e)
-    {
-        if (!IsOwner)
-        {
-            return;
-        }
-        RecieveCabinetTemp();
     }
 
     private void OnTriggerEnter(Collider floor)
@@ -204,7 +190,7 @@ public class PlayerPlacingCabinet : NetworkBehaviour
                 // Reset the reference when exiting the TrainFloorGrid
                 NetworkObjectReference buildingGhostRef = buildingGhostSystem.GetComponent<NetworkObject>();
                 RemoveFloorInteractedLogicServerRpc(OwnerClientId, buildingGhostRef);
-                Debug.Log("Exited TrainFloorGrid: " + trainFloorGrid.name);
+                //Debug.Log("Exited TrainFloorGrid: " + trainFloorGrid.name);
             }
         }
     }
@@ -248,10 +234,6 @@ public class PlayerPlacingCabinet : NetworkBehaviour
             buildingGhostNetworkObject.GetComponent<BuildingGhostSystem>().RemoveSelectedFloorGrid();
 
         }
-        Debug.LogWarning("RemoveFloorInteractedLogicClientRpc");
-        //OnRemoveSelectedFloorGrid?.Invoke(this, EventArgs.Empty);
-        Debug.LogWarning("OnTriggerExit: " + (int)clientId);
-
         //floorInteractedArray[(int)clientId] = null;
         TrainManager.Instance.SetPlayerFloorInteractedByClientIndex(clientId, null);
     }
@@ -439,7 +421,7 @@ public class PlayerPlacingCabinet : NetworkBehaviour
             Debug.LogWarning("Failed to TryGetComponent interface");
         }
 
-        Debug.LogWarning("placedInteriorTypeSO: "+ placedInteriorTypeSO.name);
+        //Debug.LogWarning("placedInteriorTypeSO: "+ placedInteriorTypeSO.name);
 
         // Recieve cabinet 
         NetworkObjectReference playerNetworkObjectReference = GetComponent<NetworkObject>();

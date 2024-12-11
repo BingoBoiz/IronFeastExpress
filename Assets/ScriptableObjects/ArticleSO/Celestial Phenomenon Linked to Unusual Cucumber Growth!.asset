@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a8af3eca14f464cac6125fcd748850, type: 3}
   m_Name: Celestial Phenomenon Linked to Unusual Cucumber Growth!
   m_EditorClassIdentifier: 
-  picture: {fileID: 21300000, guid: 61a0b7febd648b146bf95aad2eaff4ba, type: 3}
+  picture: {fileID: 21300000, guid: 22a96d8ba09a6a5469b483e495e7c11a, type: 3}
   headline: Celestial Phenomenon Linked to Unusual Cucumber Growth!
   content: A rare celestial event, known as the "Green Moon," has coincided with
     an unexpected growth spurt in Cucumber crops. While some believe this is a sign

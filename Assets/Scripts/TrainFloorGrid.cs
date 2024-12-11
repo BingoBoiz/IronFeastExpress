@@ -39,7 +39,7 @@ public class TrainFloorGrid : NetworkBehaviour
         Bounds combinedFloorBounds = boxCollider.bounds;
         floorGridOriginPosition = combinedFloorBounds.min;
 
-        Debug.Log("[Server]: Calculated Grid Origin -" + floorGridOriginPosition);
+        //Debug.Log("[Server]: Calculated Grid Origin -" + floorGridOriginPosition);
         InitializeGridOnClientRpc(floorGridOriginPosition);
     }
 

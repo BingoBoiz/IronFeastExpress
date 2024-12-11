@@ -22,11 +22,6 @@ public class NumberShownUI : MonoBehaviour
         containAmount.OnAmountChanged += ContainAmount_OnAmountChanged;
     }
 
-  /*  public override void OnNetworkSpawn()
-    {
-        
-    }*/
-
     private void ContainAmount_OnAmountChanged(object sender, IContainAmount.OnAmountChangedEventArgs e)
     {
         numberCount.text = e.amount.ToString();

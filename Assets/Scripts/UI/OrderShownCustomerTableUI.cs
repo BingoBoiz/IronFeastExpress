@@ -75,4 +75,10 @@ public class OrderShownCustomerTableUI : MonoBehaviour
     {
         dishIconMaskImage.gameObject.SetActive(false);
     }
+    private void OnDestroy()
+    {
+        customerTable.OnTimerValueChanged -= Table_OnTimerValueChanged;
+        customerTable.OnStateValueChanged -= Table_OnStateValueChanged;
+        customerTable.OnCustomerOrderDish -= CustomerTable_OnCustomerOrderDish;
+    }
 }

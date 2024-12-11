@@ -2174,6 +2174,7 @@ GameObject:
   - component: {fileID: 1730944063745593858}
   - component: {fileID: 3842362323349860163}
   - component: {fileID: 5894853096307626257}
+  - component: {fileID: -176016821153906840}
   - component: {fileID: 826242982961440583}
   - component: {fileID: 3257382519924530954}
   m_Layer: 11
@@ -2212,7 +2213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2127867196
+  GlobalObjectIdHash: 832500000
   InScenePlacedSourceGlobalObjectIdHash: 832500000
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -2297,6 +2298,18 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &-176016821153906840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732770861908954458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0692d18b59a90cc4497ad55f22549714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &826242982961440583
 BoxCollider:
   m_ObjectHideFlags: 0
